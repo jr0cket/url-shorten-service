@@ -4,7 +4,7 @@
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
             [ring.util.response :refer [redirect]]))
 
-(def urls {})
+(def urls {"ldnclj" "http://londonclojurians.org"})
 
 (defn handle-form [request] "Create a new short code")
 
@@ -13,7 +13,10 @@
   [request]
   (str "please implement me"))
 
-(defn handle-short-code [request] "Redirect to url")
+(defn handle-short-code [request]
+  (if-let [url (urls (:possible-code (request :params)))]
+    (redirect url)
+    (route/not-found "Unknown short code")))
 
 (defroutes app-routes
   (GET "/" [] (redirect "/index.html"))
