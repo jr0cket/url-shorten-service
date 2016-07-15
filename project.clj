@@ -1,6 +1,6 @@
 (defproject url-shortner-service "0.1.0-SNAPSHOT"
-  :description "FIXME: write description"
-  :url "http://example.com/FIXME"
+  :description "A simple webservice to create short aliases for web addresses"
+  :url "https://github.com/jr0cket/url-shorten-service"
   :min-lein-version "2.0.0"
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [compojure "1.5.1"]
