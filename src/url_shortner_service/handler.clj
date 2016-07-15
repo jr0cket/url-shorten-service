@@ -23,7 +23,7 @@
 
 (defroutes app-routes
   (GET "/" [] (redirect "/index.html"))
-  (route/resources "index.html")
+  (route/resources "/")
   (GET "/url/:url-short-code" [] short-code)
   (POST "/url-form/submit" [] handle-form)
   (GET "/:possible-code" [] handle-short-code)
